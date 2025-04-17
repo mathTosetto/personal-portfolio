@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700&display=swap');
+
+* {
+    font-family: 'Readex Pro', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ffffff; /* Light neutral white background */
+    color: #333; /* Dark gray text for readability */
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: #0056b3; /* Subtle blue for links */
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #003d80; /* Slightly darker blue on hover */
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #ccc; /* Light gray horizontal line */
+}
+
+#MainMenu {
+    visibility: hidden;
+}
+
+footer {
+    visibility: hidden;
+}
+
+header {
+    visibility: hidden;
+}
+
+/* Additional styling for buttons */
+button, .stButton button {
+    background-color: #ffffff; /* Subtle blue for buttons */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover, .stButton button:hover {
+    background-color: #ffffff; /* Darker blue on hover */
+}
+
+/* Styling for images */
+img {
+    border-radius: 5px; /* Rounded corners for images */
+    max-width: 100%;
+    height: auto;
+}
+
+.social-icons a {
+    display: block;
+    margin-bottom: 12px;
+    text-decoration: none;
+}
+
+.stDownloadButton > button {
+    padding: 0.1rem 0.5rem;
+    font-size: 0.7rem;
+    border-radius: 6px;
+}

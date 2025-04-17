@@ -1,0 +1,26 @@
+[project]
+name = "personal-portfolio"
+version = "0.1.0"
+description = "Personal portfolio using streamlit"
+authors = [
+    {name = "Matheus Brizolla", email = "22848645+mathTosetto@users.noreply.github.com"}
+]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "streamlit (>=1.44.1,<2.0.0)"
+]
+
+[tool.poetry]
+package-mode = false
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.5"
+pytest-cov = "^6.1.1"
+ruff = "^0.11.6"
+
