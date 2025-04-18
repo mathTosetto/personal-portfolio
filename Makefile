@@ -1,4 +1,4 @@
-.PHONY: install activate
+.PHONY: install activate run_app
 
 install:
 	echo "Definining the poetry configs..."
@@ -12,3 +12,7 @@ install:
 
 activate:
 	eval $(poetry env activate)
+
+run_app:
+	echo "Running the app. Access it at http://localhost:8501/"
+	streamlit run app.py
