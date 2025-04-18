@@ -72,7 +72,7 @@ coverage.xml
 docs/_build/
 
 # Outputs
-data/02_output/
+data/output/
 
 # Poetry
 *.lock
@@ -85,5 +85,3 @@ data/02_output/
 
 # Excalidraw
 diagrams/*.excalidraw
-
-mentoria.md
