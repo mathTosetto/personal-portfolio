@@ -3,7 +3,7 @@
 Welcome to my personal portfolio built with Streamlit
 This app showcases my background, key projects, and helpful Python tools I've created to enhance productivity and DevOps workflows.
 
-[Online profile](https://personal-portfolio-ej4sq5dnru2yjy5yr6upzp.streamlit.app/)
+[Online profile](https://matheus-tosetto-portfolio.streamlit.app/)
 
 ---
 
