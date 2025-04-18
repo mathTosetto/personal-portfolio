@@ -41,7 +41,7 @@ class Links(Enum):
         "Web Scraping": "https://github.com/mathTosetto/product_catalog_scraper",
         "Uv Performance": "https://github.com/mathTosetto/uv_performance",
         "Cookiecutter Streamlit": "https://github.com/mathTosetto/cookiecutter_streamlit",
-        "Cookiecutter Python": "https://github.com/mathTosetto/var_declaration_performance",
+        "Cookiecutter Python": "https://github.com/mathTosetto/cookiecutter_generic_project",
         "Var Declaration Performance": "https://github.com/mathTosetto/var_declaration_performance",
         "Mutable Default Argument": "https://github.com/mathTosetto/mutable_default_argument",
     }
