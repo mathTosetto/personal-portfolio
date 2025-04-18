@@ -25,6 +25,7 @@ class Paths(Enum):
     CSS_PATH: Path = Path("src/streamlit_app/assets/css/style.css")
     IMAGES_PATH: Path = Path("src/streamlit_app/assets/images")
     DOCS: Path = Path("src/streamlit_app/assets/docs")
+    COUNTER_PATH: Path = Path("data")
 
 
 class Links(Enum):
@@ -50,9 +51,16 @@ st.set_page_config(
     initial_sidebar_state="auto",
 )
 
+counter_file: Path = Paths.COUNTER_PATH.value / "viewers_counter.txt"
+if not counter_file.exists():
+    counter_file.write_text("0")
+
+count: int = int(counter_file.read_text())
+count += 1
+counter_file.write_text(str(count))
+
 with open(Paths.CSS_PATH.value) as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
-
 
 col1, col2 = st.columns(2)
 with col1:
@@ -65,6 +73,14 @@ with col2:
     st.title(Page.NAME.value)
     st.write(Page.DESCRIPTION.value)
     st.write(Page.SKILLS.value)
+    st.markdown(
+        f"""
+    <div style="margin-bottom: 15px;">
+        <img src="https://img.shields.io/badge/👁️_Views-{count}-blue?style=flat-square" alt="View Counter">
+    </div>
+    """,
+        unsafe_allow_html=True,
+    )
     horizontal_line()
 
     st.markdown("### 🗣️ Get in touch")
@@ -103,7 +119,7 @@ with st.expander("Data quality with Great Expectations"):
     st.write(
         "[Project](https://github.com/mathTosetto/data-quality-great-expectations)"
     )
-    st.image(Image.open(Path(Paths.IMAGES_PATH.value / "wap_architecture.png")))
+    st.image(Image.open(Paths.IMAGES_PATH.value / "wap_architecture.png"))
     st.write("Tools: Python, Docker, Unit Tests, Airflow, SQL")
 
 with st.expander("Enhanced Logs"):
@@ -128,7 +144,7 @@ with st.expander("Enhanced Logs"):
 with st.expander("Web scraping"):
     st.write("Web scraping project to extract product data from a supermarket website.")
     st.write("[Project](https://github.com/mathTosetto/product_catalog_scraper)")
-    st.image(Image.open(Path(Paths.IMAGES_PATH.value / "web_scraper.png")), width=280)
+    st.image(Image.open(Paths.IMAGES_PATH.value / "web_scraper.png"), width=280)
     st.write("Tools: Python, BeautifulSoup")
 
 st.subheader("📘 Python Projects that teach by doing")
@@ -139,7 +155,7 @@ with st.expander("DevOps enhancement - UV library"):
         "Project to prove that using UV can help decrease pipeline deployment time."
     )
     st.write("[Project](https://github.com/mathTosetto/uv_performance)")
-    st.image(Image.open(Path(Paths.IMAGES_PATH.value / "uv_project.png")))
+    st.image(Image.open(Paths.IMAGES_PATH.value / "uv_project.png"))
     st.write("Tools: Python, Unit Tests, DevOps")
 
 with st.expander("Streamlining daily workflows with Cookiecutter"):
@@ -147,7 +163,7 @@ with st.expander("Streamlining daily workflows with Cookiecutter"):
         "This is a Streamlit app starter template built with Cookiecutter. Perfect for quickly spinning up clean and organized projects."
     )
     st.write("[Project](https://github.com/mathTosetto/cookiecutter_streamlit)")
-    st.image(Image.open(Path(Paths.IMAGES_PATH.value / "cookiecutter.png")), width=280)
+    st.image(Image.open(Paths.IMAGES_PATH.value / "cookiecutter.png"), width=280)
     st.write("Tools: Python")
 
 with st.expander("Variable declaration performance test"):
