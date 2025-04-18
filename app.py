@@ -35,6 +35,16 @@ class Links(Enum):
         "DP-203 Study Series": "https://medium.com/@matbrizolla/list/dp203-study-series-f3b29e7b6634",
         "SQL Fundamentals": "https://medium.com/@matbrizolla/list/sql-fundamentals-7b93444f2559",
     }
+    GITHUB_LINKS: Dict[str, str] = {
+        "Great Expectations Project": "https://github.com/mathTosetto/data-quality-great-expectations",
+        "Enhanced Logs": "https://github.com/mathTosetto/logging_example",
+        "Web Scraping": "https://github.com/mathTosetto/product_catalog_scraper",
+        "Uv Performance": "https://github.com/mathTosetto/uv_performance",
+        "Cookiecutter Streamlit": "https://github.com/mathTosetto/cookiecutter_streamlit",
+        "Cookiecutter Python": "https://github.com/mathTosetto/var_declaration_performance",
+        "Var Declaration Performance": "https://github.com/mathTosetto/var_declaration_performance",
+        "Mutable Default Argument": "https://github.com/mathTosetto/mutable_default_argument",
+    }
 
 
 def horizontal_line():
@@ -88,10 +98,10 @@ with col2:
     st.markdown(
         f"""
         <div class="social-icons">
-            <a href={Page.SOCIAL_MEDIA.value['LinkedIn']} target="_blank">
+            <a href={Page.SOCIAL_MEDIA.value["LinkedIn"]} target="_blank">
                 <img src="https://img.shields.io/badge/LinkedIn-blue?logo=linkedin&style=for-the-badge" alt="LinkedIn">
             </a>
-            <a href={Page.SOCIAL_MEDIA.value['Github']} target="_blank">
+            <a href={Page.SOCIAL_MEDIA.value["Github"]} target="_blank">
                 <img src="https://img.shields.io/badge/GitHub-black?logo=github&style=for-the-badge" alt="GitHub">
             </a>
             <a href={Page.EMAIL.value} target="_blank">
@@ -116,9 +126,7 @@ with st.expander("Data quality with Great Expectations"):
     st.write(
         "Cool project to use Great Expectations. The idea is to create a data quality pipeline to validate the data from the WAP (Write-Audit-Publish) architecture."
     )
-    st.write(
-        "[Project](https://github.com/mathTosetto/data-quality-great-expectations)"
-    )
+    st.write(f"[Project]({Links.GITHUB_LINKS.value['Great Expectations Project']})")
     st.image(Image.open(Paths.IMAGES_PATH.value / "wap_architecture.png"))
     st.write("Tools: Python, Docker, Unit Tests, Airflow, SQL")
 
@@ -126,7 +134,7 @@ with st.expander("Enhanced Logs"):
     st.write(
         "Project to create a robust logging system for any projects. The logger is configured to output logs in both plain text (for stderr) and JSON (to a file)."
     )
-    st.write("[Project](https://github.com/mathTosetto/logging_example)")
+    st.write(f"[Project]({Links.GITHUB_LINKS.value['Enhanced Logs']})")
     data: Dict[str, str | int] = {
         "level": "ERROR",
         "message": "Error message",
@@ -143,7 +151,7 @@ with st.expander("Enhanced Logs"):
 
 with st.expander("Web scraping"):
     st.write("Web scraping project to extract product data from a supermarket website.")
-    st.write("[Project](https://github.com/mathTosetto/product_catalog_scraper)")
+    st.write(f"[Project]({Links.GITHUB_LINKS.value['Web Scraping']})")
     st.image(Image.open(Paths.IMAGES_PATH.value / "web_scraper.png"), width=280)
     st.write("Tools: Python, BeautifulSoup")
 
@@ -154,7 +162,7 @@ with st.expander("DevOps enhancement - UV library"):
     st.write(
         "Project to prove that using UV can help decrease pipeline deployment time."
     )
-    st.write("[Project](https://github.com/mathTosetto/uv_performance)")
+    st.write(f"[Project]({Links.GITHUB_LINKS.value['Uv Performance']})")
     st.image(Image.open(Paths.IMAGES_PATH.value / "uv_project.png"))
     st.write("Tools: Python, Unit Tests, DevOps")
 
@@ -162,7 +170,12 @@ with st.expander("Streamlining daily workflows with Cookiecutter"):
     st.write(
         "This is a Streamlit app starter template built with Cookiecutter. Perfect for quickly spinning up clean and organized projects."
     )
-    st.write("[Project](https://github.com/mathTosetto/cookiecutter_streamlit)")
+    st.write(
+        f"[Streamlit Cookiecutter]({Links.GITHUB_LINKS.value['Cookiecutter Streamlit']})"
+    )
+    st.write(
+        f"[Python Cookiecutter]({Links.GITHUB_LINKS.value['Cookiecutter Python']})"
+    )
     st.image(Image.open(Paths.IMAGES_PATH.value / "cookiecutter.png"), width=280)
     st.write("Tools: Python")
 
@@ -170,7 +183,7 @@ with st.expander("Variable declaration performance test"):
     st.write(
         "This project contains a Python script that measures the time it takes to declare variables for different data types using their respective constructors and literal syntax."
     )
-    st.write("[Project](https://github.com/mathTosetto/var_declaration_performance)")
+    st.write(f"[Project]({Links.GITHUB_LINKS.value['Var Declaration Performance']})")
 
     results: str = """
     Int results:
@@ -185,7 +198,7 @@ with st.expander("Mutable default arguments"):
     st.write(
         "This repository demonstrates the concept of mutable default arguments in Python."
     )
-    st.write("[Project](https://github.com/mathTosetto/mutable_default_argument)")
+    st.write(f"[Project]({Links.GITHUB_LINKS.value['Mutable Default Argument']})")
 
     results: str = """
     from typing import List
